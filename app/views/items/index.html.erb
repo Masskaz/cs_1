@@ -1,0 +1,33 @@
+<!-- アイテム一覧 -->
+	<%= render 'layouts/list' %>
+
+	<div id= "item">
+		<div class="item_visual">
+			<div class="box">
+				<h2>アイテム</h2>
+			</div>
+		</div>
+
+		<div class="inner">
+			<table class="table table-striped">
+				<% @items.each do |item| %>
+					<tr>
+						<td><%= attachment_image_tag item, :photo, :fill,800,800, format:'jpg', class:"item_photo" %></td>
+					</tr>
+					<tr>
+						<th>ジャンル</th><th>ブランド</th><th>シーズン</th>
+					</tr>
+					<tr>
+						<td><%= item.genre %></td>
+						<td><%= item.brand %></td>
+						<td><%= item.season %></td>
+					</tr>
+				<% end %>
+			</table>
+			<div>
+				<%= paginate @items, class: "paginate_word" %>
+			</div>
+		</div>
+	</div>
+
+

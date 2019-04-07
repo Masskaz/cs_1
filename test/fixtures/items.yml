@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  photo: 1
+  genre: 1
+  category: 1
+  brand: MyText
+  season: 1
+
+two:
+  photo: 1
+  genre: 1
+  category: 1
+  brand: MyText
+  season: 1

@@ -1,0 +1,63 @@
+<!-- ログイン後ページ共通　メニュー開始 -->
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-xs-4"> -->
+    <nav>
+      <ul class="nav">
+        <% if user_signed_in? %>
+          <header id="global-head">
+            <h1 id="brand-logo">Cset</h1>
+          </header>
+
+          <div id="nav-toggle">
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <nav id="global-nav">
+              <ul>
+                <%= link_to current_user.name, user_path(current_user) %>
+                <li class="sub-menu">
+                    <%= link_to '▷アイテム', items_path, class: "item" %>
+                  </a>
+                 <ul class="sub-menu-nav">
+                      <li><a class="item_registration" href="/items/new" >▷アイテム登録</a></li>
+                  </ul>
+                </li>
+                <li class="sub-menu">
+                    <%= link_to '▷コーディネート', new_corde_path, class: "corde" %>
+                  </a>
+                </li>
+                <li>
+                  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+        <% else %>
+          <li>
+            <%= link_to "サインアップ", new_user_registration_path, class: "sign_up" %>
+          </li>
+          <li>
+            <%= link_to "ログイン", new_user_session_path, class: "sign_in" %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+<!--     </div>
+    <div class="col-xs-8"></div>
+  </div>
+</div> -->
+
+
+
+
+  <!-- ログイン後ページ共通　メニューJS 開始 -->
+    <%= javascript_include_tag 'menu.js' %>
+  <!-- ログイン後ページ共通　メニューJS 終了 -->
+<!-- ログイン後ページ共通　メニュー終了 -->

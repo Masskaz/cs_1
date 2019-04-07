@@ -1,0 +1,65 @@
+<%= javascript_include_tag "corde.js" %>
+<!-- コーデ -->
+
+<%= render 'layouts/list' %>
+
+
+	<div id= "corde">
+		<div class="corde_visual">
+			<div class="box">
+				<h2>コーディネート</h2>
+			</div>
+		</div>
+
+		<div class="inner">
+			<div id="target">
+				<div class="image_box">
+					<img src="" class="preview corde_image ui-draggable ui-draggable-handle" style="position: relative;">
+				</div>
+		
+
+				<%= form_for(@corde_new, url: new_corde_path) do |f| %>
+					<%= f.attachment_field :image, class: "getphoto" %>
+        		<!--  <label for="name">▷コーデ名</label>
+					<input type="text" name="corde[corde_name]" id="corde_corde_name" />
+
+					<label for="name">▷シーズン</label>
+					<input type="radio" name="corde[season]"　value="春" id="corde_season" />春
+					<input type="rado" name="corde[season]"　value="夏" id="corde_season" />夏
+					<input type="radio" name="corde[season]"　value="秋" id="corde_season" />秋
+					<input type="radio" name="corde[season]"　value="冬" id="corde_season" />冬
+					<%#= f.submit'保存' %> -->
+				<% end %>
+
+				<br>
+ 					<a href="" id="ss" download="Coordinate.png">スクリーンショットをダウンロード</a>
+  				<br>
+  			</div>
+  		</div>
+
+<!-- JS スクリーンショット機能 開始 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+	<script>
+		window.onload = function(){
+
+			//HTML内に画像を表示
+			html2canvas(document.getElementById("target"), { letterRendering: 1, allowTaint : true,
+				onrendered : function (canvas) {
+				//imgタグのsrcの中に、html2canvasがレンダリングした画像を指定する。
+				var imgData = canvas.toDataURL();
+				document.getElementById("target").src = imgData;
+				}
+			});
+
+	      //ボタンを押下した際にダウンロードする画像を作る
+	      	html2canvas(document.body,{
+	        	onrendered: function(canvas){
+	          	//aタグのhrefにキャプチャ画像のURLを設定
+	          	var imgData = canvas.toDataURL();
+	          	document.getElementById("ss").href = imgData;
+	        	}
+	      	});
+
+	    }
+	</script>
+<!-- JS スクリーンショット機能 終了 -->

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cset</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+<!-- /jQueryを読み込む -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+  </head>
+
+  <body>
+
+
+
+    <%= yield %>
+    </body>
+  </html>

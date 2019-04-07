@@ -1,0 +1,32 @@
+	<%= render 'layouts/list' %>
+
+	<div id= "item">
+		<div class="item_visual">
+			<div class="box">
+				<h2>アイテム登録</h2>
+			</div>
+		</div>
+
+		<div class="inner">
+			<div class="item_form_box">
+				<%= form_for(@item_new) do |f| %>
+					<%= f.attachment_field :photo ,class: "f_attachment" %>
+					▷ジャンル
+					<%= f.select :genre, [["",""],["アウター", "アウター"], ["トップス", "トップス"], ["ボトムス", "ボトムス"]],class: "f_genre" %>
+					<br>
+					<br>
+					▷シーズン
+					<%= f.radio_button :season, "春",class: "f_season" %> 春
+					<%= f.radio_button :season, "夏",class: "f_season" %> 夏
+					<%= f.radio_button :season, "秋",class: "f_season" %> 秋
+					<%= f.radio_button :season, "冬",class: "f_season" %> 冬
+					<br>
+					<br>
+					▷ブランド名
+					<%= f.text_field :brand,class: "f_brand" %>
+					<br>
+					<br>
+					<%= f.submit '保存' %>
+				<% end %>
+			</div>
+		</div>
