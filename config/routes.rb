@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+# トップページ指定(heloku)
+  root "users#show"
+  
 # devise(ユーザー)
   devise_for :users
 # ユーザー
