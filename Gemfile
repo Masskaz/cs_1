@@ -71,8 +71,6 @@ gem 'kaminari'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'jquery-rails'
+gem 'pg', '~> 0.19.0'
 
-group :production do
-  gem 'pg', '~> 0.19.0'
-end
 
